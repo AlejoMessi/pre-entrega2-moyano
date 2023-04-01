@@ -1,0 +1,17 @@
+.bot_count button {
+    margin-top: 1rem;
+    border-radius: 10px;
+    font-size: .8rem;
+    padding: .7rem 1.2rem;
+    letter-spacing: .15rem;
+    background-color: var(--clr-primario);
+    text-transform: uppercase;
+    color: var(--clr-secundario);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.bot_count button:hover {
+    background-color: var(--clr-gris-claro);
+    color: var(--clr-primario);
+}

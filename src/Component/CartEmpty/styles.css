@@ -1,0 +1,14 @@
+.empty {
+    padding: 4rem;
+}
+
+.empty__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.empty__content-icono {
+    font-size: 10rem;
+    color: var(--clr-gris-claro);
+}

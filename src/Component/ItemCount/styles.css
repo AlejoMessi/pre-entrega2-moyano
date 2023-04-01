@@ -1,0 +1,48 @@
+.bot {
+    display: flex;
+    flex-direction: column;
+}
+
+.bot__content {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 2rem;
+}
+
+.bot__content-contador {
+    border: 2px solid var(--clr-gris-claro);
+    border-radius: 10px;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem 1rem;
+}
+
+.bot__content-contador > button {
+    margin: 0;
+}
+
+.bot__content-contador > p {
+    text-align: center;
+    width: 20px;
+    margin: 0 1rem;
+    font-size: 1rem;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    .bot {
+        padding-top: 0;
+    }
+    
+
+    .bot__content-contador {
+        margin-top: 0;
+    }
+
+
+}

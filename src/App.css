@@ -1,24 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,500;1,700&family=Poppins:wght@300;500;700&display=swap');
 
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
+  text-decoration: none;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
 
 :root {
-  --black: rgb(15, 15, 15);
-  --grey: rgb(159, 159, 159);
-  --white: rgb(215, 215, 215);
+  --clr-primario: rgb(39, 38, 38);
+  --clr-primario-dark: rgb(9, 9, 9);
+  --clr-secundario: rgb(255, 255, 255);
+  --clr-terciario: rgb(137, 137, 137);
+  --clr-gris-claro: rgb(221, 220, 220);
+  --ff-primario: 'Poppins', sans-serif;
+  --ff-secundario: 'Playfair Display', serif;;
+}
+
+button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-}
-
-button {
-  background: transparent;
-  border: 0;
 }

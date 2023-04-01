@@ -1,33 +1,62 @@
 import './App.css';
-import React from 'react';
-import NavBar from "./Components/NavBar/NavBar"
-import ItemListContainer from './Components/ItemListContainar/ItemListContainer.js';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer";
+import ItemListContainer from './Component/ItemListContainer/ItemListContainer';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NavBar from './Component/NavBar/NavBar';
+import ItemDetailContainer from './Component/ItemDetailContainer/ItemDetailContainer';
+import { CartContextProvider } from "./context/cartContext";
+import CartContainer from './Component/CartContainer/CartContainer';
+import Banner from './Component/Banner/Banner';
+import Footer from './Component/Footer/Footer';
+import CheckOutId from './Component/CheckOutId/CheckOutId';
 
 function App() {
   return (
-    <div className="container">
+    <div>
+      <CartContextProvider>
+
         <BrowserRouter>
-            <NavBar />
-            <Routes>
+
+          <NavBar />
+          
+          <Routes>
+              
+              <Route
+                path='/'
+                element={<Banner />}
+              />
+              
+              <Route
+                path='/tienda'
+                element={<ItemListContainer />}
+              />
+
+              <Route
+                path='/cart'
+                element={<CartContainer />}
+              />
 
               <Route 
-                  path="/" 
-                  element={<ItemListContainer />} 
-              />
-            
-              <Route
-                  path="/producto/:idUser"
-                  element={<ItemDetailContainer />}
+                path='/category/:idCategory'
+                element= { < ItemListContainer />}
               />
 
               <Route
-                  path="/category/:idCategory"
-                  element={<ItemListContainer />}
+                path='/detalle/:idUser'
+                element={<ItemDetailContainer />}
               />
-            </Routes>
+
+              <Route
+                path='/checkout/:idCheckOut'
+                element={<CheckOutId />}
+              />
+
+          </Routes>
+
+          <Footer />
+
         </BrowserRouter>
+
+      </CartContextProvider>
     </div>
   );
 }

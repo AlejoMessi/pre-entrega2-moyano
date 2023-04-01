@@ -1,8 +1,5 @@
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-
-import products from "../products/productos";
-
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 
 const firebaseConfig = {
     apiKey: "AIzaSyDPtMfbMz0MRZ_pQw5IhhNubC744GXhlJY",
@@ -17,6 +14,14 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+// Get a list of cities from your database
+async function getCities(db) {
+  const citiesCol = collection(db, 'cities');
+  const citySnapshot = await getDocs(citiesCol);
+  const cityList = citySnapshot.docs.map(doc => doc.data());
+  return cityList;
+}
+
 export async function createOrder(orderData) {
     const collectionRef = collection(db, 'orders');
     
@@ -26,8 +31,8 @@ export async function createOrder(orderData) {
 }
 
 export async function exportData() {
-    for (let item of products) {
-        const collectionRef = collection(db, 'products');
+    for (let item of productos) {
+        const collectionRef = collection(db, 'productos');
         const {id} = await addDoc(collectionRef, item);
         console.log('Documento creado', id);
     }
